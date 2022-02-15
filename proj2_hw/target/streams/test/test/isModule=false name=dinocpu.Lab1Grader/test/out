@@ -1,0 +1,41 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mLab1Grader:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- verifyRType *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  treadle.executable.TreadleException: setValue: Cannot find cpu.registers.regs_5 in symbol table[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.$anonfun$setValue$1(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse(MapLike.scala:131)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse$(MapLike.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.AbstractMap.getOrElse(Map.scala:63)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.SymbolTable.getOrElse(SymbolTable.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.setValue(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.TreadleTester.poke(TreadleTester.scala:263)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2(CPUTesterDriver.scala:39)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2$adapted(CPUTesterDriver.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- verifyAdd *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  treadle.executable.TreadleException: setValue: Cannot find cpu.registers.regs_5 in symbol table[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.$anonfun$setValue$1(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse(MapLike.scala:131)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse$(MapLike.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.AbstractMap.getOrElse(Map.scala:63)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.SymbolTable.getOrElse(SymbolTable.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.setValue(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.TreadleTester.poke(TreadleTester.scala:263)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2(CPUTesterDriver.scala:39)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2$adapted(CPUTesterDriver.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- verifyMultiCycle *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  treadle.executable.TreadleException: setValue: Cannot find cpu.registers.regs_5 in symbol table[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.$anonfun$setValue$1(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse(MapLike.scala:131)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse$(MapLike.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.AbstractMap.getOrElse(Map.scala:63)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.SymbolTable.getOrElse(SymbolTable.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.setValue(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.TreadleTester.poke(TreadleTester.scala:263)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2(CPUTesterDriver.scala:39)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2$adapted(CPUTesterDriver.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- verifyALUControl[0m[0m

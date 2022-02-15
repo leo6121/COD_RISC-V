@@ -1,0 +1,7 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mMemoryTester:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mDualPortedMemory[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should have all zeros (with treadle)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mDualPortedMemory[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should have increasing words (with treadle)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mDualPortedMemory[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should store and load words (with treadle)[0m[0m

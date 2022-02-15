@@ -1,0 +1,184 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mSingleCycleRTypeTesterLab1:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mSingle Cycle CPU[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should run R-type instruction add1 *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  treadle.executable.TreadleException: setValue: Cannot find cpu.registers.regs_5 in symbol table[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.$anonfun$setValue$1(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse(MapLike.scala:131)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse$(MapLike.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.AbstractMap.getOrElse(Map.scala:63)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.SymbolTable.getOrElse(SymbolTable.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.setValue(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.TreadleTester.poke(TreadleTester.scala:263)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2(CPUTesterDriver.scala:39)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2$adapted(CPUTesterDriver.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should run R-type instruction add2 *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  treadle.executable.TreadleException: setValue: Cannot find cpu.registers.regs_5 in symbol table[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.$anonfun$setValue$1(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse(MapLike.scala:131)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse$(MapLike.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.AbstractMap.getOrElse(Map.scala:63)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.SymbolTable.getOrElse(SymbolTable.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.setValue(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.TreadleTester.poke(TreadleTester.scala:263)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2(CPUTesterDriver.scala:39)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2$adapted(CPUTesterDriver.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should run R-type instruction add0 *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  treadle.executable.TreadleException: setValue: Cannot find cpu.registers.regs_5 in symbol table[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.$anonfun$setValue$1(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse(MapLike.scala:131)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse$(MapLike.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.AbstractMap.getOrElse(Map.scala:63)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.SymbolTable.getOrElse(SymbolTable.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.setValue(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.TreadleTester.poke(TreadleTester.scala:263)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2(CPUTesterDriver.scala:39)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2$adapted(CPUTesterDriver.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should run R-type instruction or *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  treadle.executable.TreadleException: setValue: Cannot find cpu.registers.regs_5 in symbol table[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.$anonfun$setValue$1(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse(MapLike.scala:131)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse$(MapLike.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.AbstractMap.getOrElse(Map.scala:63)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.SymbolTable.getOrElse(SymbolTable.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.setValue(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.TreadleTester.poke(TreadleTester.scala:263)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2(CPUTesterDriver.scala:39)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2$adapted(CPUTesterDriver.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should run R-type instruction sub *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  treadle.executable.TreadleException: setValue: Cannot find cpu.registers.regs_5 in symbol table[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.$anonfun$setValue$1(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse(MapLike.scala:131)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse$(MapLike.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.AbstractMap.getOrElse(Map.scala:63)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.SymbolTable.getOrElse(SymbolTable.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.setValue(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.TreadleTester.poke(TreadleTester.scala:263)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2(CPUTesterDriver.scala:39)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2$adapted(CPUTesterDriver.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should run R-type instruction and *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  treadle.executable.TreadleException: setValue: Cannot find cpu.registers.regs_5 in symbol table[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.$anonfun$setValue$1(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse(MapLike.scala:131)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse$(MapLike.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.AbstractMap.getOrElse(Map.scala:63)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.SymbolTable.getOrElse(SymbolTable.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.setValue(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.TreadleTester.poke(TreadleTester.scala:263)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2(CPUTesterDriver.scala:39)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2$adapted(CPUTesterDriver.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should run R-type instruction xor *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  treadle.executable.TreadleException: setValue: Cannot find cpu.registers.regs_7 in symbol table[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.$anonfun$setValue$1(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse(MapLike.scala:131)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse$(MapLike.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.AbstractMap.getOrElse(Map.scala:63)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.SymbolTable.getOrElse(SymbolTable.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.setValue(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.TreadleTester.poke(TreadleTester.scala:263)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2(CPUTesterDriver.scala:39)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2$adapted(CPUTesterDriver.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should run R-type instruction slt *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  treadle.executable.TreadleException: setValue: Cannot find cpu.registers.regs_7 in symbol table[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.$anonfun$setValue$1(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse(MapLike.scala:131)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse$(MapLike.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.AbstractMap.getOrElse(Map.scala:63)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.SymbolTable.getOrElse(SymbolTable.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.setValue(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.TreadleTester.poke(TreadleTester.scala:263)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2(CPUTesterDriver.scala:39)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2$adapted(CPUTesterDriver.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should run R-type instruction slt1 *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  treadle.executable.TreadleException: setValue: Cannot find cpu.registers.regs_7 in symbol table[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.$anonfun$setValue$1(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse(MapLike.scala:131)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse$(MapLike.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.AbstractMap.getOrElse(Map.scala:63)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.SymbolTable.getOrElse(SymbolTable.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.setValue(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.TreadleTester.poke(TreadleTester.scala:263)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2(CPUTesterDriver.scala:39)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2$adapted(CPUTesterDriver.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should run R-type instruction sltu *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  treadle.executable.TreadleException: setValue: Cannot find cpu.registers.regs_7 in symbol table[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.$anonfun$setValue$1(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse(MapLike.scala:131)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse$(MapLike.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.AbstractMap.getOrElse(Map.scala:63)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.SymbolTable.getOrElse(SymbolTable.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.setValue(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.TreadleTester.poke(TreadleTester.scala:263)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2(CPUTesterDriver.scala:39)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2$adapted(CPUTesterDriver.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should run R-type instruction sltu1 *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  treadle.executable.TreadleException: setValue: Cannot find cpu.registers.regs_7 in symbol table[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.$anonfun$setValue$1(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse(MapLike.scala:131)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse$(MapLike.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.AbstractMap.getOrElse(Map.scala:63)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.SymbolTable.getOrElse(SymbolTable.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.setValue(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.TreadleTester.poke(TreadleTester.scala:263)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2(CPUTesterDriver.scala:39)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2$adapted(CPUTesterDriver.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should run R-type instruction sll *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  treadle.executable.TreadleException: setValue: Cannot find cpu.registers.regs_7 in symbol table[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.$anonfun$setValue$1(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse(MapLike.scala:131)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse$(MapLike.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.AbstractMap.getOrElse(Map.scala:63)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.SymbolTable.getOrElse(SymbolTable.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.setValue(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.TreadleTester.poke(TreadleTester.scala:263)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2(CPUTesterDriver.scala:39)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2$adapted(CPUTesterDriver.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should run R-type instruction srl *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  treadle.executable.TreadleException: setValue: Cannot find cpu.registers.regs_7 in symbol table[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.$anonfun$setValue$1(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse(MapLike.scala:131)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse$(MapLike.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.AbstractMap.getOrElse(Map.scala:63)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.SymbolTable.getOrElse(SymbolTable.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.setValue(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.TreadleTester.poke(TreadleTester.scala:263)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2(CPUTesterDriver.scala:39)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2$adapted(CPUTesterDriver.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should run R-type instruction sra *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  treadle.executable.TreadleException: setValue: Cannot find cpu.registers.regs_7 in symbol table[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.$anonfun$setValue$1(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse(MapLike.scala:131)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.MapLike.getOrElse$(MapLike.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.AbstractMap.getOrElse(Map.scala:63)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.SymbolTable.getOrElse(SymbolTable.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.executable.ExecutionEngine.setValue(ExecutionEngine.scala:221)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at treadle.TreadleTester.poke(TreadleTester.scala:263)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2(CPUTesterDriver.scala:39)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at dinocpu.CPUTesterDriver.$anonfun$initRegs$2$adapted(CPUTesterDriver.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m

@@ -1,0 +1,53 @@
+circuit ALU :
+  module ALU :
+    input clock : Clock
+    input reset : UInt<1>
+    input io_operation : UInt<4>
+    input io_inputx : UInt<32>
+    input io_inputy : UInt<32>
+    output io_result : UInt<32>
+  
+    node _T = eq(UInt<1>("h0"), io_operation) @[Conditional.scala 37:30]
+    node _T_1 = and(io_inputx, io_inputy) @[alu.scala 30:30]
+    node _T_2 = eq(UInt<1>("h1"), io_operation) @[Conditional.scala 37:30]
+    node _T_3 = or(io_inputx, io_inputy) @[alu.scala 33:30]
+    node _T_4 = eq(UInt<2>("h2"), io_operation) @[Conditional.scala 37:30]
+    node _T_5 = add(io_inputx, io_inputy) @[alu.scala 36:30]
+    node _T_6 = tail(_T_5, 1) @[alu.scala 36:30]
+    node _T_7 = eq(UInt<2>("h3"), io_operation) @[Conditional.scala 37:30]
+    node _T_8 = sub(io_inputx, io_inputy) @[alu.scala 39:30]
+    node _T_9 = tail(_T_8, 1) @[alu.scala 39:30]
+    node _T_10 = eq(UInt<3>("h4"), io_operation) @[Conditional.scala 37:30]
+    node _T_11 = asSInt(io_inputx) @[alu.scala 42:31]
+    node _T_12 = asSInt(io_inputy) @[alu.scala 42:50]
+    node _T_13 = lt(_T_11, _T_12) @[alu.scala 42:38]
+    node _T_14 = eq(UInt<3>("h5"), io_operation) @[Conditional.scala 37:30]
+    node _T_15 = lt(io_inputx, io_inputy) @[alu.scala 45:31]
+    node _T_16 = eq(UInt<3>("h6"), io_operation) @[Conditional.scala 37:30]
+    node _T_17 = bits(io_inputy, 4, 0) @[alu.scala 48:42]
+    node _T_18 = dshl(io_inputx, _T_17) @[alu.scala 48:30]
+    node _T_19 = eq(UInt<3>("h7"), io_operation) @[Conditional.scala 37:30]
+    node _T_20 = bits(io_inputy, 4, 0) @[alu.scala 51:42]
+    node _T_21 = dshr(io_inputx, _T_20) @[alu.scala 51:30]
+    node _T_22 = eq(UInt<4>("h8"), io_operation) @[Conditional.scala 37:30]
+    node _T_23 = asSInt(io_inputx) @[alu.scala 54:31]
+    node _T_24 = bits(io_inputy, 4, 0) @[alu.scala 54:50]
+    node _T_25 = dshr(_T_23, _T_24) @[alu.scala 54:38]
+    node _T_26 = asUInt(_T_25) @[alu.scala 54:57]
+    node _T_27 = eq(UInt<4>("h9"), io_operation) @[Conditional.scala 37:30]
+    node _T_28 = xor(io_inputx, io_inputy) @[alu.scala 57:30]
+    node _T_29 = eq(UInt<4>("ha"), io_operation) @[Conditional.scala 37:30]
+    node _T_30 = or(io_inputx, io_inputy) @[alu.scala 60:32]
+    node _T_31 = not(_T_30) @[alu.scala 60:20]
+    node _GEN_0 = mux(_T_29, _T_31, UInt<1>("h0")) @[Conditional.scala 39:67]
+    node _GEN_1 = mux(_T_27, _T_28, _GEN_0) @[Conditional.scala 39:67]
+    node _GEN_2 = mux(_T_22, _T_26, _GEN_1) @[Conditional.scala 39:67]
+    node _GEN_3 = mux(_T_19, _T_21, _GEN_2) @[Conditional.scala 39:67]
+    node _GEN_4 = mux(_T_16, _T_18, _GEN_3) @[Conditional.scala 39:67]
+    node _GEN_5 = mux(_T_14, _T_15, _GEN_4) @[Conditional.scala 39:67]
+    node _GEN_6 = mux(_T_10, _T_13, _GEN_5) @[Conditional.scala 39:67]
+    node _GEN_7 = mux(_T_7, _T_9, _GEN_6) @[Conditional.scala 39:67]
+    node _GEN_8 = mux(_T_4, _T_6, _GEN_7) @[Conditional.scala 39:67]
+    node _GEN_9 = mux(_T_2, _T_3, _GEN_8) @[Conditional.scala 39:67]
+    node _GEN_10 = mux(_T, _T_1, _GEN_9) @[Conditional.scala 40:58]
+    io_result <= bits(_GEN_10, 31, 0) @[alu.scala 26:13 alu.scala 30:17 alu.scala 33:17 alu.scala 36:17 alu.scala 39:17 alu.scala 42:17 alu.scala 45:17 alu.scala 48:17 alu.scala 51:17 alu.scala 54:17 alu.scala 57:17 alu.scala 60:17]

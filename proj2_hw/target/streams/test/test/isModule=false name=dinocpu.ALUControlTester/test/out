@@ -1,0 +1,4 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mALUControlTester:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mALUControl[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should match expectations for each intruction type *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  false was not true (ALUControlUnitTest.scala:63)[0m[0m

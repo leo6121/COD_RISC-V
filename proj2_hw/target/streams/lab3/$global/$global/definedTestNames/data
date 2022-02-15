@@ -1,0 +1,1 @@
+["dinocpu.MemoryTester","dinocpu.SingleCycleCPUTester","dinocpu.SingleCycleRTypeTesterLab1","dinocpu.SingleCycleAddTesterLab1","dinocpu.ALUTester","dinocpu.ControlTester","dinocpu.Lab1Grader","dinocpu.RegisterFileTester","dinocpu.ALUControlTesterLab1","dinocpu.ALUControlTester","dinocpu.BranchControlTester","dinocpu.CPUFlatSpec","dinocpu.SingleCycleMultiCycleTesterLab1"]

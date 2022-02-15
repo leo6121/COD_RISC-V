@@ -1,0 +1,13 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(dinocpu.SingleCycleAddTesterLab1, org.scalatest.tools.Framework$$anon$1@53247f19, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(dinocpu.ALUTester, org.scalatest.tools.Framework$$anon$1@53247f19, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(dinocpu.SingleCycleRTypeTesterLab1, org.scalatest.tools.Framework$$anon$1@53247f19, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(dinocpu.Lab1Grader, org.scalatest.tools.Framework$$anon$1@53247f19, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(dinocpu.RegisterFileTester, org.scalatest.tools.Framework$$anon$1@53247f19, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(dinocpu.SingleCycleMultiCycleTesterLab1, org.scalatest.tools.Framework$$anon$1@53247f19, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(dinocpu.BranchControlTester, org.scalatest.tools.Framework$$anon$1@53247f19, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(dinocpu.SingleCycleCPUTester, org.scalatest.tools.Framework$$anon$1@53247f19, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(dinocpu.MemoryTester, org.scalatest.tools.Framework$$anon$1@53247f19, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(dinocpu.CPUFlatSpec, org.scalatest.tools.Framework$$anon$1@53247f19, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(dinocpu.ControlTester, org.scalatest.tools.Framework$$anon$1@53247f19, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(dinocpu.ALUControlTesterLab1, org.scalatest.tools.Framework$$anon$1@53247f19, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(dinocpu.ALUControlTester, org.scalatest.tools.Framework$$anon$1@53247f19, false, [SuiteSelector])[0m

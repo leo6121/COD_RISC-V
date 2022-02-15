@@ -1,0 +1,4 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mControlTester:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mControl[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should match expectations *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  false was not true (ControlUnitTest.scala:47)[0m[0m

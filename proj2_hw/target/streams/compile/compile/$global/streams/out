@@ -1,0 +1,6 @@
+[0m[[0m[31merror[0m] [0m[0m/home/yunseong/COD_RISC-V/proj2_hw/src/main/scala/single-cycle/cpu.scala:40:46: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : chisel3.UInt[0m
+[0m[[0m[31merror[0m] [0m[0m required: chisel3.Bool[0m
+[0m[[0m[31merror[0m] [0m[0m  registers.io.wen := Mux(io.imem.instruction(11,7), false.B, true.B)[0m
+[0m[[0m[31merror[0m] [0m[0m                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
