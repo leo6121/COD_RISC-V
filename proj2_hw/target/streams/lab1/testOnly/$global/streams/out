@@ -1,9 +1,12 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(dinocpu.SingleCycleAddTesterLab1, org.scalatest.tools.Framework$$anon$1@3878f97c, false, [SuiteSelector])[0m
 [0m[[0m[0mdebug[0m] [0m[0mSummary for ScalaCheck not available.[0m
 [0m[[0m[0minfo[0m] [0m[0mScalaTest[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 35 milliseconds.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 0, aborted 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 0, failed 0, canceled 0, ignored 0, pending 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[33mNo tests were executed.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0mPassed: Total 0, Failed 0, Errors 0, Passed 0[0m
-[0m[[0m[0minfo[0m] [0m[0mNo tests to run for Lab1 / testOnly[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 1 second, 285 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 0, failed 1, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m*** 1 TEST FAILED ***[0m[0m
+[0m[[0m[31merror[0m] [0m[0mFailed: Total 1, Failed 1, Errors 0, Passed 0[0m
+[0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
+[0m[[0m[31merror[0m] [0m[0m	dinocpu.SingleCycleAddTesterLab1[0m
+[0m[[0m[31merror[0m] [0m[0m(Lab1 / [31mtestOnly[0m) sbt.TestsFailedException: Tests unsuccessful[0m

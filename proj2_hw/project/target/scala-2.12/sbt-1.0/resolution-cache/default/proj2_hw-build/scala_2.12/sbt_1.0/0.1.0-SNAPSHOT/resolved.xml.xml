@@ -4,7 +4,7 @@
 		module="proj2_hw-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20220214084506"
+		publication="20220215151526"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>

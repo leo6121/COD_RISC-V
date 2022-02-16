@@ -488,7 +488,7 @@ circuit Top :
     inst branchCtrl of BranchControl @[cpu.scala 25:26]
     inst pcPlusFour of Adder @[cpu.scala 26:26]
     inst branchAdd of Adder @[cpu.scala 27:26]
-    reg pc : UInt<1>, clock with :
+    reg pc : UInt<32>, clock with :
       reset => (UInt<1>("h0"), pc) @[cpu.scala 19:27]
     reg value : UInt<30>, clock with :
       reset => (UInt<1>("h0"), value) @[Counter.scala 29:33]
@@ -497,60 +497,68 @@ circuit Top :
     node _T_3 = tail(_T_2, 1) @[Counter.scala 39:22]
     node _GEN_0 = mux(UInt<1>("h1"), _T_3, value) @[Counter.scala 67:17]
     node _GEN_1 = mux(UInt<1>("h1"), _T_1, UInt<1>("h0")) @[Counter.scala 67:17]
-    node _T_4 = asUInt(reset) @[cpu.scala 56:9]
-    node _T_5 = eq(_T_4, UInt<1>("h0")) @[cpu.scala 56:9]
-    node _T_6 = asUInt(reset) @[cpu.scala 57:9]
-    node _T_7 = eq(_T_6, UInt<1>("h0")) @[cpu.scala 57:9]
-    node _T_8 = asUInt(reset) @[cpu.scala 58:9]
-    node _T_9 = eq(_T_8, UInt<1>("h0")) @[cpu.scala 58:9]
-    node _T_10 = asUInt(reset) @[cpu.scala 60:11]
-    node _T_11 = eq(_T_10, UInt<1>("h0")) @[cpu.scala 60:11]
-    node _T_12 = asUInt(reset) @[cpu.scala 60:11]
-    node _T_13 = eq(_T_12, UInt<1>("h0")) @[cpu.scala 60:11]
-    node _T_14 = asUInt(reset) @[cpu.scala 60:11]
-    node _T_15 = eq(_T_14, UInt<1>("h0")) @[cpu.scala 60:11]
-    node _T_16 = asUInt(reset) @[cpu.scala 60:11]
-    node _T_17 = eq(_T_16, UInt<1>("h0")) @[cpu.scala 60:11]
-    node _T_18 = asUInt(reset) @[cpu.scala 60:11]
-    node _T_19 = eq(_T_18, UInt<1>("h0")) @[cpu.scala 60:11]
-    node _T_20 = asUInt(reset) @[cpu.scala 60:11]
-    node _T_21 = eq(_T_20, UInt<1>("h0")) @[cpu.scala 60:11]
-    node _T_22 = asUInt(reset) @[cpu.scala 60:11]
-    node _T_23 = eq(_T_22, UInt<1>("h0")) @[cpu.scala 60:11]
-    node _T_24 = asUInt(reset) @[cpu.scala 60:11]
-    node _T_25 = eq(_T_24, UInt<1>("h0")) @[cpu.scala 60:11]
-    node _T_26 = asUInt(reset) @[cpu.scala 62:9]
-    node _T_27 = eq(_T_26, UInt<1>("h0")) @[cpu.scala 62:9]
+    node _T_4 = bits(io_imem_instruction, 19, 15) @[cpu.scala 37:47]
+    node _T_5 = bits(io_imem_instruction, 24, 20) @[cpu.scala 38:47]
+    node _T_6 = bits(io_imem_instruction, 11, 7) @[cpu.scala 39:47]
+    node _T_7 = bits(io_imem_instruction, 11, 7) @[cpu.scala 40:46]
+    node _T_8 = eq(_T_7, UInt<1>("h0")) @[cpu.scala 40:53]
+    node _T_9 = mux(_T_8, UInt<1>("h0"), UInt<1>("h1")) @[cpu.scala 40:26]
+    node _T_10 = bits(io_imem_instruction, 31, 25) @[cpu.scala 43:46]
+    node _T_11 = bits(io_imem_instruction, 14, 12) @[cpu.scala 44:46]
+    node _T_12 = asUInt(reset) @[cpu.scala 71:9]
+    node _T_13 = eq(_T_12, UInt<1>("h0")) @[cpu.scala 71:9]
+    node _T_14 = asUInt(reset) @[cpu.scala 72:9]
+    node _T_15 = eq(_T_14, UInt<1>("h0")) @[cpu.scala 72:9]
+    node _T_16 = asUInt(reset) @[cpu.scala 73:9]
+    node _T_17 = eq(_T_16, UInt<1>("h0")) @[cpu.scala 73:9]
+    node _T_18 = asUInt(reset) @[cpu.scala 75:11]
+    node _T_19 = eq(_T_18, UInt<1>("h0")) @[cpu.scala 75:11]
+    node _T_20 = asUInt(reset) @[cpu.scala 75:11]
+    node _T_21 = eq(_T_20, UInt<1>("h0")) @[cpu.scala 75:11]
+    node _T_22 = asUInt(reset) @[cpu.scala 75:11]
+    node _T_23 = eq(_T_22, UInt<1>("h0")) @[cpu.scala 75:11]
+    node _T_24 = asUInt(reset) @[cpu.scala 75:11]
+    node _T_25 = eq(_T_24, UInt<1>("h0")) @[cpu.scala 75:11]
+    node _T_26 = asUInt(reset) @[cpu.scala 75:11]
+    node _T_27 = eq(_T_26, UInt<1>("h0")) @[cpu.scala 75:11]
+    node _T_28 = asUInt(reset) @[cpu.scala 75:11]
+    node _T_29 = eq(_T_28, UInt<1>("h0")) @[cpu.scala 75:11]
+    node _T_30 = asUInt(reset) @[cpu.scala 75:11]
+    node _T_31 = eq(_T_30, UInt<1>("h0")) @[cpu.scala 75:11]
+    node _T_32 = asUInt(reset) @[cpu.scala 75:11]
+    node _T_33 = eq(_T_32, UInt<1>("h0")) @[cpu.scala 75:11]
+    node _T_34 = asUInt(reset) @[cpu.scala 77:9]
+    node _T_35 = eq(_T_34, UInt<1>("h0")) @[cpu.scala 77:9]
     node _T = _GEN_1 @[Counter.scala 67:24]
-    io_imem_address <= pc @[cpu.scala 40:19]
+    io_imem_address <= pc @[cpu.scala 54:19]
     io_dmem_address is invalid
     io_dmem_writedata is invalid
     io_dmem_memread is invalid
     io_dmem_memwrite is invalid
     io_dmem_maskmode is invalid
     io_dmem_sext is invalid
-    pc <= mux(reset, UInt<1>("h0"), pc)
+    pc <= mux(reset, UInt<1>("h0"), pcPlusFour.io_result) @[cpu.scala 53:6]
     control.clock <= clock
     control.reset <= reset
     control.io_opcode is invalid
     registers.clock <= clock
     registers.reset <= reset
-    registers.io_readreg1 is invalid
-    registers.io_readreg2 is invalid
-    registers.io_writereg is invalid
-    registers.io_writedata is invalid
-    registers.io_wen is invalid
+    registers.io_readreg1 <= _T_4 @[cpu.scala 37:25]
+    registers.io_readreg2 <= _T_5 @[cpu.scala 38:25]
+    registers.io_writereg <= _T_6 @[cpu.scala 39:25]
+    registers.io_writedata <= alu.io_result @[cpu.scala 41:26]
+    registers.io_wen <= _T_9 @[cpu.scala 40:20]
     aluControl.clock <= clock
     aluControl.reset <= reset
-    aluControl.io_add is invalid
-    aluControl.io_immediate is invalid
-    aluControl.io_funct7 is invalid
-    aluControl.io_funct3 is invalid
+    aluControl.io_add <= UInt<1>("h0") @[cpu.scala 46:21]
+    aluControl.io_immediate <= UInt<1>("h0") @[cpu.scala 47:27]
+    aluControl.io_funct7 <= _T_10 @[cpu.scala 43:24]
+    aluControl.io_funct3 <= _T_11 @[cpu.scala 44:24]
     alu.clock <= clock
     alu.reset <= reset
-    alu.io_operation is invalid
-    alu.io_inputx is invalid
-    alu.io_inputy is invalid
+    alu.io_operation <= aluControl.io_operation @[cpu.scala 45:20]
+    alu.io_inputx <= registers.io_readdata1 @[cpu.scala 48:17]
+    alu.io_inputy <= registers.io_readdata2 @[cpu.scala 49:17]
     immGen.clock <= clock
     immGen.reset <= reset
     immGen.io_instruction is invalid
@@ -562,25 +570,25 @@ circuit Top :
     branchCtrl.io_inputy is invalid
     pcPlusFour.clock <= clock
     pcPlusFour.reset <= reset
-    pcPlusFour.io_inputx is invalid
-    pcPlusFour.io_inputy is invalid
+    pcPlusFour.io_inputx <= pc @[cpu.scala 51:24]
+    pcPlusFour.io_inputy <= UInt<32>("h4") @[cpu.scala 52:24]
     branchAdd.clock <= clock
     branchAdd.reset <= reset
     branchAdd.io_inputx is invalid
     branchAdd.io_inputy is invalid
     value <= mux(reset, UInt<30>("h0"), _GEN_0) @[Counter.scala 39:13]
-    printf(clock, and(and(UInt<1>("h1"), _T_5), UInt<1>("h1")), "DASM(%x)\n", io_imem_instruction) @[cpu.scala 56:9]
-    printf(clock, and(and(UInt<1>("h1"), _T_7), UInt<1>("h1")), "CYCLE=%d\n", value) @[cpu.scala 57:9]
-    printf(clock, and(and(UInt<1>("h1"), _T_9), UInt<1>("h1")), "pc: %d\n", pc) @[cpu.scala 58:9]
-    printf(clock, and(and(UInt<1>("h1"), _T_11), UInt<1>("h1")), "control: AnonymousBundle(opcode -> %d, branch -> %d, memread -> %d, toreg -> %d, add -> %d, memwrite -> %d, regwrite -> %d, immediate -> %d, alusrc1 -> %d, jump -> %d)\n", control.io_opcode, control.io_branch, control.io_memread, control.io_toreg, control.io_add, control.io_memwrite, control.io_regwrite, control.io_immediate, control.io_alusrc1, control.io_jump) @[cpu.scala 60:11]
-    printf(clock, and(and(UInt<1>("h1"), _T_13), UInt<1>("h1")), "registers: AnonymousBundle(readreg1 -> %d, readreg2 -> %d, writereg -> %d, writedata -> %d, wen -> %d, readdata1 -> %d, readdata2 -> %d)\n", registers.io_readreg1, registers.io_readreg2, registers.io_writereg, registers.io_writedata, registers.io_wen, registers.io_readdata1, registers.io_readdata2) @[cpu.scala 60:11]
-    printf(clock, and(and(UInt<1>("h1"), _T_15), UInt<1>("h1")), "aluControl: AnonymousBundle(add -> %d, immediate -> %d, funct7 -> %d, funct3 -> %d, operation -> %d)\n", aluControl.io_add, aluControl.io_immediate, aluControl.io_funct7, aluControl.io_funct3, aluControl.io_operation) @[cpu.scala 60:11]
-    printf(clock, and(and(UInt<1>("h1"), _T_17), UInt<1>("h1")), "alu: AnonymousBundle(operation -> %d, inputx -> %d, inputy -> %d, result -> %d)\n", alu.io_operation, alu.io_inputx, alu.io_inputy, alu.io_result) @[cpu.scala 60:11]
-    printf(clock, and(and(UInt<1>("h1"), _T_19), UInt<1>("h1")), "immGen: AnonymousBundle(instruction -> %d, sextImm -> %d)\n", immGen.io_instruction, immGen.io_sextImm) @[cpu.scala 60:11]
-    printf(clock, and(and(UInt<1>("h1"), _T_21), UInt<1>("h1")), "branchCtrl: AnonymousBundle(branch -> %d, funct3 -> %d, inputx -> %d, inputy -> %d, taken -> %d)\n", branchCtrl.io_branch, branchCtrl.io_funct3, branchCtrl.io_inputx, branchCtrl.io_inputy, branchCtrl.io_taken) @[cpu.scala 60:11]
-    printf(clock, and(and(UInt<1>("h1"), _T_23), UInt<1>("h1")), "pcPlusFour: AnonymousBundle(inputx -> %d, inputy -> %d, result -> %d)\n", pcPlusFour.io_inputx, pcPlusFour.io_inputy, pcPlusFour.io_result) @[cpu.scala 60:11]
-    printf(clock, and(and(UInt<1>("h1"), _T_25), UInt<1>("h1")), "branchAdd: AnonymousBundle(inputx -> %d, inputy -> %d, result -> %d)\n", branchAdd.io_inputx, branchAdd.io_inputy, branchAdd.io_result) @[cpu.scala 60:11]
-    printf(clock, and(and(UInt<1>("h1"), _T_27), UInt<1>("h1")), "\n") @[cpu.scala 62:9]
+    printf(clock, and(and(UInt<1>("h1"), _T_13), UInt<1>("h1")), "DASM(%x)\n", io_imem_instruction) @[cpu.scala 71:9]
+    printf(clock, and(and(UInt<1>("h1"), _T_15), UInt<1>("h1")), "CYCLE=%d\n", value) @[cpu.scala 72:9]
+    printf(clock, and(and(UInt<1>("h1"), _T_17), UInt<1>("h1")), "pc: %d\n", pc) @[cpu.scala 73:9]
+    printf(clock, and(and(UInt<1>("h1"), _T_19), UInt<1>("h1")), "control: AnonymousBundle(opcode -> %d, branch -> %d, memread -> %d, toreg -> %d, add -> %d, memwrite -> %d, regwrite -> %d, immediate -> %d, alusrc1 -> %d, jump -> %d)\n", control.io_opcode, control.io_branch, control.io_memread, control.io_toreg, control.io_add, control.io_memwrite, control.io_regwrite, control.io_immediate, control.io_alusrc1, control.io_jump) @[cpu.scala 75:11]
+    printf(clock, and(and(UInt<1>("h1"), _T_21), UInt<1>("h1")), "registers: AnonymousBundle(readreg1 -> %d, readreg2 -> %d, writereg -> %d, writedata -> %d, wen -> %d, readdata1 -> %d, readdata2 -> %d)\n", registers.io_readreg1, registers.io_readreg2, registers.io_writereg, registers.io_writedata, registers.io_wen, registers.io_readdata1, registers.io_readdata2) @[cpu.scala 75:11]
+    printf(clock, and(and(UInt<1>("h1"), _T_23), UInt<1>("h1")), "aluControl: AnonymousBundle(add -> %d, immediate -> %d, funct7 -> %d, funct3 -> %d, operation -> %d)\n", aluControl.io_add, aluControl.io_immediate, aluControl.io_funct7, aluControl.io_funct3, aluControl.io_operation) @[cpu.scala 75:11]
+    printf(clock, and(and(UInt<1>("h1"), _T_25), UInt<1>("h1")), "alu: AnonymousBundle(operation -> %d, inputx -> %d, inputy -> %d, result -> %d)\n", alu.io_operation, alu.io_inputx, alu.io_inputy, alu.io_result) @[cpu.scala 75:11]
+    printf(clock, and(and(UInt<1>("h1"), _T_27), UInt<1>("h1")), "immGen: AnonymousBundle(instruction -> %d, sextImm -> %d)\n", immGen.io_instruction, immGen.io_sextImm) @[cpu.scala 75:11]
+    printf(clock, and(and(UInt<1>("h1"), _T_29), UInt<1>("h1")), "branchCtrl: AnonymousBundle(branch -> %d, funct3 -> %d, inputx -> %d, inputy -> %d, taken -> %d)\n", branchCtrl.io_branch, branchCtrl.io_funct3, branchCtrl.io_inputx, branchCtrl.io_inputy, branchCtrl.io_taken) @[cpu.scala 75:11]
+    printf(clock, and(and(UInt<1>("h1"), _T_31), UInt<1>("h1")), "pcPlusFour: AnonymousBundle(inputx -> %d, inputy -> %d, result -> %d)\n", pcPlusFour.io_inputx, pcPlusFour.io_inputy, pcPlusFour.io_result) @[cpu.scala 75:11]
+    printf(clock, and(and(UInt<1>("h1"), _T_33), UInt<1>("h1")), "branchAdd: AnonymousBundle(inputx -> %d, inputy -> %d, result -> %d)\n", branchAdd.io_inputx, branchAdd.io_inputy, branchAdd.io_result) @[cpu.scala 75:11]
+    printf(clock, and(and(UInt<1>("h1"), _T_35), UInt<1>("h1")), "\n") @[cpu.scala 77:9]
 
   module DualPortedMemory :
     input clock : Clock

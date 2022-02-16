@@ -1,31 +1,38 @@
 [
   {
-    "class":"logger.LogLevelAnnotation",
-    "globalLogLevel":{
-      
-    }
+    "class":"firrtl.options.OutputAnnotationFileAnnotation",
+    "file":"Top"
   },
   {
-    "class":"firrtl.options.TargetDirAnnotation",
-    "directory":"."
+    "class":"chisel3.stage.phases.DriverCompatibility$RunFirrtlCompilerAnnotation$"
   },
   {
-    "class":"firrtl.EmitCircuitAnnotation",
-    "emitter":"firrtl.LowFirrtlEmitter"
+    "class":"firrtl.annotations.LoadMemoryAnnotation",
+    "target":"Top.DualPortedMemory.memory",
+    "fileName":"./add1.hex",
+    "hexOrBinary":"h",
+    "originalMemoryNameOpt":"memory"
+  },
+  {
+    "class":"firrtl.stage.RunFirrtlTransformAnnotation",
+    "transform":"chisel3.util.experimental.LoadMemoryTransform"
   },
   {
     "class":"firrtl.transforms.BlackBoxTargetDirAnno",
     "targetDir":"."
   },
   {
-    "class":"firrtl.annotations.LoadMemoryAnnotation",
-    "target":"Top.DualPortedMemory.memory",
-    "fileName":"./sra.hex",
-    "hexOrBinary":"h",
-    "originalMemoryNameOpt":"memory"
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.LowFirrtlEmitter"
   },
   {
-    "class":"firrtl.options.OutputAnnotationFileAnnotation",
-    "file":"Top"
+    "class":"firrtl.options.TargetDirAnnotation",
+    "directory":"."
+  },
+  {
+    "class":"logger.LogLevelAnnotation",
+    "globalLogLevel":{
+      
+    }
   }
 ]

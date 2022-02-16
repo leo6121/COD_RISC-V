@@ -37,13 +37,11 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
   registers.io.readreg1 := io.imem.instruction(19,15)
   registers.io.readreg2 := io.imem.instruction(24,20)
   registers.io.writereg := io.imem.instruction(11,7)
-  registers.io.wen := Mux(io.imem.instruction(11,7) === "b0000".U, false.B, true.B)
   registers.io.writedata := alu.io.result
 
   aluControl.io.funct7 := io.imem.instruction(31,25)
   aluControl.io.funct3 := io.imem.instruction(14,12)
   alu.io.operation := aluControl.io.operation 
-  
   alu.io.inputx := registers.io.readdata1
   alu.io.inputy := registers.io.readdata2
 

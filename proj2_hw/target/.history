@@ -5,3 +5,9 @@ Lab1/testOnly dinocpu.SingleCycleAddTester1Lab1
 Lab1/testOnly dinocpu.ALUControlTesterLab1
 Lab1/testOnly dinocpu.SingleCycleAddTester1Lab1
 exit
+LabLab1 / testOnly dinocpu.SingleCycleAddTesterLab1
+Lab1 / testOnly dinocpu.SingleCycleAddTesterLab1
+Lab1 / testOnly dinocpu.SingleCycleRTypeTesterLab1
+Lab1 / testOnly dinocpu.SingleCycleMultiCycleTesterLab1
+Lab1 / testOnly dinocpu.ALUControlTesterLab1
+Lab1 / testOnly dinocpu.SingleCycleAddTesterLab1

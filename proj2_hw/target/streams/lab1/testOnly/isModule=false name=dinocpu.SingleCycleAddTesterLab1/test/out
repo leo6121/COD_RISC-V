@@ -1,0 +1,11 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mSingleCycleAddTesterLab1:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mSingle Cycle CPU[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should run add test add1 *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  firrtl.passes.PassExceptions: firrtl.passes.CheckInitialization$RefNotInitializedException:  @[cpu.scala 21:26] : [module SingleCycleCPU]  Reference registers is not fully initialized.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m   : registers.io.wen <= VOID[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[cpu.scala 22:26] : [module SingleCycleCPU]  Reference aluControl is not fully initialized.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m   : aluControl.io.immediate <= VOID[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[cpu.scala 22:26] : [module SingleCycleCPU]  Reference aluControl is not fully initialized.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m   : aluControl.io.add <= VOID[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31mfirrtl.passes.PassException: 3 errors detected![0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
