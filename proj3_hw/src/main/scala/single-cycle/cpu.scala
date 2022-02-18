@@ -28,49 +28,76 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
   val (cycleCount, _) = Counter(true.B, 1 << 30)
 
   // To make the FIRRTL compiler happy. Remove this as you connect up the I/O's
-  branchCtrl.io := DontCare
-  branchAdd.io  := DontCare
-
-  immGen.io.instruction := io.imem.instruction
-
-  io.imem.address := pc
-
-  pcPlusFour.io.inputx := pc
+  val pcaddr = Wire(UInt(32.W))
+  val pcPlusresult = Wire(UInt(32.W))
+  io.imem.instruction := pcaddr
+  pcaddr := pc
+  pc := pcPlusresult
+  
+  pcPlusFour.io.inputx := pcaddr
   pcPlusFour.io.inputy := 4.U
-
+  pcPlusresult := pcPlusFour.io.result
+  
   val instruction = io.imem.instruction
+  val readdata1 = Wire(UInt(32.W))
+  val readdata2 = Wire(UInt(32.W))
+
+  registers.io.readreg1 := instruction(24,20)
+  registers.io.readreg2 := instruction(19,15)
+  registers.io.writereg := instruction(11,7)
+  readdata1 := registers.io.readdata1
+  readdata2 := registers.io.readdata2
+  registers.io.wen := Mux(registers.io.writereg === 0.U, false.B, true.B)
+
+  val branch = Wire(UInt(1.W))
+  val memread = Wire(UInt(1.W))
+  val toreg = Wire(UInt(2.W))
+  val add = Wire(UInt(1.W))
+  val memwrite = Wire(UInt(1.W))
+  val regwrite = Wire(UInt(1.W))
+  val immediate = Wire(Bool())
+  val alusrc1 = Wire(UInt(1.W))
 
   control.io.opcode := instruction(6,0)
+  toreg := control.io.toreg
+  add := control.io.add
+  memread := control.io.memread
+  immediate := control.io.immediate
+  regwrite := control.io.regwrite
 
-  registers.io.readreg1 := instruction(19,15)
-  registers.io.readreg2 := instruction(24,20)
+  val immgen = Wire(UInt(32.W))
 
-  val writereg = instruction(11,7)
-  registers.io.writereg := writereg
-  registers.io.wen :=  Mux(writereg === 0.U, false.B, true.B)
+  immGen.io.instruction := instruction
+  immgen := immGen.io.sextImm
 
-  aluControl.io.add       := false.B
-  aluControl.io.immediate := control.io.immediate
-  aluControl.io.funct7    := instruction(31,25)
-  aluControl.io.funct3    := instruction(14,12)
+  val operation = Wire(UInt(4.W))
 
-  alu.io.operation := aluControl.io.operation
-  alu.io.inputx := registers.io.readdata1
-  alu.io.inputy := Mux(control.io.immediate, immGen.io.sextImm, registers.io.readdata2)
+  aluControl.io.add := add
+  aluControl.io.immediate := immediate
+  aluControl.io.funct3 := instruction(14,12)
+  aluControl.io.funct7 := instruction(31,25)
+  operation := aluControl.io.operation
 
-  when (control.io.toreg === 0.U) {
-    registers.io.writedata := alu.io.result
-  } .elsewhen (control.io.toreg === 1.U) {
-    registers.io.writedata := io.dmem.readdata
+  val aluresult = Wire(UInt(32.W))
+
+  alu.io.operation := operation
+  alu.io.inputx := readdata1
+  alu.io.inputy := Mux(immediate, immgen, readdata2)
+  aluresult := alu.io.result
+
+  val readdata = Wire(UInt(32.W))
+
+  io.dmem.address := aluresult
+  io.dmem.memread := memread
+  readdata := io.dmem.readdata
+
+  when(toreg === 0.U){
+    registers.io.writedata := aluresult
+  } .elsewhen(toreg === 1.U){
+    registers.io.writedata := readdata
   } .otherwise{registers.io.writedata := 0.U}
 
-  io.dmem.address := alu.io.result
-  io.dmem.memwrite := control.io.memwrite
-  io.dmem.memread := control.io.memread
-  io.dmem.writedata := registers.io.readdata2
 
-
-  pc := pcPlusFour.io.result
 
   // Debug / pipeline viewer
   val structures = List(

@@ -28,7 +28,7 @@ circuit Top :
     node _T_10 = mux(_T_5, UInt<1>("h1"), UInt<2>("h3")) @[Lookup.scala 33:37]
     node _T_11 = mux(_T_3, UInt<1>("h0"), _T_10) @[Lookup.scala 33:37]
     node signals_2 = mux(_T_1, UInt<1>("h0"), _T_11) @[Lookup.scala 33:37]
-    node _T_12 = mux(_T_5, UInt<1>("h0"), UInt<1>("h0")) @[Lookup.scala 33:37]
+    node _T_12 = mux(_T_5, UInt<1>("h1"), UInt<1>("h0")) @[Lookup.scala 33:37]
     node _T_13 = mux(_T_3, UInt<1>("h0"), _T_12) @[Lookup.scala 33:37]
     node signals_3 = mux(_T_1, UInt<1>("h0"), _T_13) @[Lookup.scala 33:37]
     node _T_14 = mux(_T_5, UInt<1>("h0"), UInt<1>("h0")) @[Lookup.scala 33:37]
@@ -575,7 +575,7 @@ circuit Top :
     registers.io_wen <= _T_8 @[cpu.scala 50:20]
     aluControl.clock <= clock
     aluControl.reset <= reset
-    aluControl.io_add <= UInt<1>("h0") @[cpu.scala 52:27]
+    aluControl.io_add <= control.io_add @[cpu.scala 52:27]
     aluControl.io_immediate <= control.io_immediate @[cpu.scala 53:27]
     aluControl.io_funct7 <= _T_9 @[cpu.scala 54:27]
     aluControl.io_funct3 <= _T_10 @[cpu.scala 55:27]
