@@ -30,15 +30,19 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
   // To make the FIRRTL compiler happy. Remove this as you connect up the I/O's
   val pcaddr = Wire(UInt(32.W))
   val pcPlusresult = Wire(UInt(32.W))
-  io.imem.instruction := pcaddr
-  pcaddr := pc
+  pcaddr := pc  
   pc := pcPlusresult
   
   pcPlusFour.io.inputx := pcaddr
   pcPlusFour.io.inputy := 4.U
   pcPlusresult := pcPlusFour.io.result
+
+  io.imem.instruction := pcaddr 
   
-  val instruction = io.imem.instruction
+  val instruction = Wire(UInt(32.W))
+
+  instruction := io.imem.instruction
+  
   val readdata1 = Wire(UInt(32.W))
   val readdata2 = Wire(UInt(32.W))
 
@@ -49,14 +53,14 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
   readdata2 := registers.io.readdata2
   registers.io.wen := Mux(registers.io.writereg === 0.U, false.B, true.B)
 
-  val branch = Wire(UInt(1.W))
-  val memread = Wire(UInt(1.W))
+  val branch = Wire(Bool())
+  val memread = Wire(Bool())
   val toreg = Wire(UInt(2.W))
-  val add = Wire(UInt(1.W))
-  val memwrite = Wire(UInt(1.W))
-  val regwrite = Wire(UInt(1.W))
+  val add = Wire(Bool())
+  val memwrite = Wire(Bool())
+  val regwrite = Wire(Bool())
   val immediate = Wire(Bool())
-  val alusrc1 = Wire(UInt(1.W))
+  val alusrc1 = Wire(Bool())
 
   control.io.opcode := instruction(6,0)
   toreg := control.io.toreg
