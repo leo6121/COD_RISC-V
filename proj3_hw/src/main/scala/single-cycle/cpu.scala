@@ -60,10 +60,8 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
   pcPlusFour.io.inputy := 4.U
   pcPlusresult := pcPlusFour.io.result
 
-  io.imem.address := pcaddr   
-
+  io.imem.address := pcaddr
   instruction := io.imem.instruction
-
 
   registers.io.readreg1 := instruction(24,20)
   registers.io.readreg2 := instruction(19,15)
@@ -89,7 +87,7 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
   operation := aluControl.io.operation
 
   alu.io.operation := operation
-  alu.io.inputx := readdata1
+  alu.io.inputx := Mux(instruction(6,0) === "b0010111".U, pcaddr, readdata1)
   alu.io.inputy := Mux(immediate, immgen, readdata2)
   aluresult := alu.io.result
 
