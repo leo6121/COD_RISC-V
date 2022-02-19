@@ -24,14 +24,18 @@ class BranchControl extends Module {
 
     val taken  = Output(Bool())
   })
-  when (io.funct3 === "b000".U){
+  when (io.funct3 === "b000".U){//beq
     io.taken := Mux(io.inputx === io.inputy, true.B, false.B)
-  } .elsewhen (io.funct3 === "b001".U) {
+  } .elsewhen (io.funct3 === "b001".U) {//bne
     io.taken := Mux(io.inputx === io.inputy, false.B, true.B)
-  } .elsewhen (io.funct3 === "b100".U | io.funct3 === "b110".U) {
+  } .elsewhen (io.funct3 === "b100".U) {//blt
+    io.taken := Mux(io.inputx.asSInt < io.inputy.asSInt, true.B, false.B)
+  } .elsewhen (io.funct3 === "b101".U){//bge
+    io.taken := Mux(io.inputx.asSInt < io.inputy.asSInt, false.B, true.B)
+  } .elsewhen (io.funct3 === "b110".U){//bltu
     io.taken := Mux(io.inputx < io.inputy, true.B, false.B)
-  } .elsewhen (io.funct3 === "b101".U | io.funct3 === "b111".U){
+  } .elsewhen (io.funct3 === "b111".U){//bgeu
     io.taken := Mux(io.inputx < io.inputy, false.B, true.B)
   } .otherwise {io.taken := false.B}
-  
+
 }
