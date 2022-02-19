@@ -28,35 +28,15 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
   val (cycleCount, _) = Counter(true.B, 1 << 30)
 
   // To make the FIRRTL compiler happy. Remove this as you connect up the I/O's
-  branchCtrl.io := DontCare
-  branchAdd.io := DontCare
-
-  val pcPlusresult = pcPlusFour.io.result
-  
   val instruction = io.imem.instruction
 
-  val readdata1 = registers.io.readdata1
-  val readdata2 = registers.io.readdata2
-
-  val memread = control.io.memread
-  val memwrite = control.io.memwrite
-  val toreg = control.io.toreg
-  val add = control.io.add
-  val regwrite = control.io.regwrite
-  val immediate = control.io.immediate
-  val alusrc1 = control.io.alusrc1
-
-  val immgen = immGen.io.sextImm
-  
-  val operation = aluControl.io.operation
-  
-  val aluresult = alu.io.result
-  
-  val readdata = io.dmem.readdata
-
   io.imem.address := pc  
-  pc := pcPlusresult
-  
+  when (control.io.jump === 0.U){
+    pc := pcPlusFour.io.result
+  } .elsewhen(control.io.jump === 2.U){
+    pc := branchAdd.io.result
+  } .otherwise {pc := alu.io.result}
+
   pcPlusFour.io.inputx := pc
   pcPlusFour.io.inputy := 4.U
 
@@ -67,31 +47,39 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
 
   control.io.opcode := instruction(6,0)
 
+  branchCtrl.io.funct3 := instruction(14,12)
+  branchCtrl.io.inputx := registers.io.readdata1
+  branchCtrl.io.inputy := registers.io.readdata2
+  branchCtrl.io.branch := control.io.branch
+
+  branchAdd.io.inputx := pc
+  branchAdd.io.inputy := Mux(branchCtrl.io.taken, immGen.io.sextImm, 4.U)
+
   immGen.io.instruction := instruction
 
-  aluControl.io.add := add
-  aluControl.io.immediate := immediate
+  aluControl.io.add := control.io.add
+  aluControl.io.immediate := control.io.immediate
   aluControl.io.funct3 := instruction(14,12)
   aluControl.io.funct7 := instruction(31,25)
 
-  alu.io.operation := operation
-  when (alusrc1 === 0.U) {
-    alu.io.inputx := readdata1
-  } .elsewhen (alusrc1 === 1.U) {
+  alu.io.operation := aluControl.io.operation
+  when (control.io.alusrc1 === 0.U) {
+    alu.io.inputx := registers.io.readdata1
+  } .elsewhen (control.io.alusrc1 === 1.U) {
     alu.io.inputx := pc
   } .otherwise {alu.io.inputx := 0.U}
-  alu.io.inputy := Mux(immediate, immgen, readdata2)
+  alu.io.inputy := Mux(control.io.immediate, immGen.io.sextImm, registers.io.readdata2)
 
-  io.dmem.address := aluresult
-  io.dmem.memread := memread
-  io.dmem.memwrite := memwrite
+  io.dmem.address := alu.io.result
+  io.dmem.memread := control.io.memread
+  io.dmem.memwrite := control.io.memwrite
 
-  when(toreg === 0.U){
-    registers.io.writedata := aluresult
-  } .elsewhen(toreg === 1.U){
-    registers.io.writedata := readdata
-  } .elsewhen(toreg === 2.U){
-    registers.io.writedata := pcPlusresult
+  when(control.io.toreg === 0.U){
+    registers.io.writedata := alu.io.result
+  } .elsewhen(control.io.toreg === 1.U){
+    registers.io.writedata := io.dmem.readdata
+  } .elsewhen(control.io.toreg === 2.U){
+    registers.io.writedata := pcPlusFour.io.result
   } .otherwise {registers.io.writedata := 0.U}
 
 

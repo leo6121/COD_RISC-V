@@ -24,7 +24,14 @@ class BranchControl extends Module {
 
     val taken  = Output(Bool())
   })
-  io.taken := DontCare
-
-
+  when (io.funct3 === "b000".U){
+    io.taken := Mux(io.inputx === io.inputy, true.B, false.B)
+  } .elsewhen (io.funct3 === "b001".U) {
+    io.taken := Mux(io.inputx === io.inputy, false.B, true.B)
+  } .elsewhen (io.funct3 === "b100".U | io.funct3 === "b110".U) {
+    io.taken := Mux(io.inputx < io.inputy, true.B, false.B)
+  } .elsewhen (io.funct3 === "b101".U | io.funct3 === "b111".U){
+    io.taken := Mux(io.inputx < io.inputy, false.B, true.B)
+  } .otherwise {io.taken := false.B}
+  
 }
