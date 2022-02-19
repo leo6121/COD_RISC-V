@@ -31,78 +31,60 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
   branchCtrl.io := DontCare
   branchAdd.io := DontCare
 
-  val pcaddr = Wire(UInt(32.W))
-  val pcPlusresult = Wire(UInt(32.W))
+  val pcPlusresult = pcPlusFour.io.result
   
-  val instruction = Wire(UInt(32.W))
+  val instruction = io.imem.instruction
 
-  val readdata1 = Wire(UInt(32.W))
-  val readdata2 = Wire(UInt(32.W))
-  
-  val memread = Wire(Bool())
-  val memwrite = Wire(Bool())
-  val toreg = Wire(UInt(2.W))
-  val add = Wire(Bool())
-  val regwrite = Wire(Bool())
-  val immediate = Wire(Bool())
-  val alusrc1 = Wire(UInt(2.W))
+  val readdata1 = registers.io.readdata1
+  val readdata2 = registers.io.readdata2
 
-  val immgen = Wire(UInt(32.W))
-  
-  val operation = Wire(UInt(4.W))
-  
-  val aluresult = Wire(UInt(32.W))
-  
-  val readdata = Wire(UInt(32.W))
+  val memread = control.io.memread
+  val memwrite = control.io.memwrite
+  val toreg = control.io.toreg
+  val add = control.io.add
+  val regwrite = control.io.regwrite
+  val immediate = control.io.immediate
+  val alusrc1 = control.io.alusrc1
 
-  pcaddr := pc  
+  val immgen = immGen.io.sextImm
+  
+  val operation = aluControl.io.operation
+  
+  val aluresult = alu.io.result
+  
+  val readdata = io.dmem.readdata
+
+  io.imem.address := pc  
   pc := pcPlusresult
   
-  pcPlusFour.io.inputx := pcaddr
+  pcPlusFour.io.inputx := pc
   pcPlusFour.io.inputy := 4.U
-  pcPlusresult := pcPlusFour.io.result
-
-  io.imem.address := pcaddr
-  instruction := io.imem.instruction
 
   registers.io.readreg1 := instruction(19,15)
   registers.io.readreg2 := instruction(24,20)
   registers.io.writereg := instruction(11,7)
-  readdata1 := registers.io.readdata1
-  readdata2 := registers.io.readdata2
   registers.io.wen := Mux(registers.io.writereg === 0.U, false.B, true.B)
 
   control.io.opcode := instruction(6,0)
-  toreg := control.io.toreg
-  add := control.io.add
-  memread := control.io.memread
-  memwrite := control.io.memwrite
-  immediate := control.io.immediate
-  regwrite := control.io.regwrite
-  alusrc1 := control.io.alusrc1
 
   immGen.io.instruction := instruction
-  immgen := immGen.io.sextImm
 
   aluControl.io.add := add
   aluControl.io.immediate := immediate
   aluControl.io.funct3 := instruction(14,12)
   aluControl.io.funct7 := instruction(31,25)
-  operation := aluControl.io.operation
 
   alu.io.operation := operation
   when (alusrc1 === 0.U) {
     alu.io.inputx := readdata1
   } .elsewhen (alusrc1 === 1.U) {
-    alu.io.inputx := pcaddr
+    alu.io.inputx := pc
   } .otherwise {alu.io.inputx := 0.U}
   alu.io.inputy := Mux(immediate, immgen, readdata2)
-  aluresult := alu.io.result
 
   io.dmem.address := aluresult
   io.dmem.memread := memread
   io.dmem.memwrite := memwrite
-  readdata := io.dmem.readdata
 
   when(toreg === 0.U){
     registers.io.writedata := aluresult
