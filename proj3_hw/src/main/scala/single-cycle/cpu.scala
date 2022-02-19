@@ -40,11 +40,13 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
   val readdata2 = Wire(UInt(32.W))
   
   val memread = Wire(Bool())
+  val memwrite = Wire(Bool())
   val toreg = Wire(UInt(2.W))
   val add = Wire(Bool())
   val regwrite = Wire(Bool())
   val immediate = Wire(Bool())
-  
+  val alusrc1 = Wire(UInt(2.W))
+
   val immgen = Wire(UInt(32.W))
   
   val operation = Wire(UInt(4.W))
@@ -63,8 +65,8 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
   io.imem.address := pcaddr
   instruction := io.imem.instruction
 
-  registers.io.readreg1 := instruction(24,20)
-  registers.io.readreg2 := instruction(19,15)
+  registers.io.readreg1 := instruction(19,15)
+  registers.io.readreg2 := instruction(24,20)
   registers.io.writereg := instruction(11,7)
   readdata1 := registers.io.readdata1
   readdata2 := registers.io.readdata2
@@ -74,8 +76,10 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
   toreg := control.io.toreg
   add := control.io.add
   memread := control.io.memread
+  memwrite := control.io.memwrite
   immediate := control.io.immediate
   regwrite := control.io.regwrite
+  alusrc1 := control.io.alusrc1
 
   immGen.io.instruction := instruction
   immgen := immGen.io.sextImm
@@ -87,19 +91,26 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
   operation := aluControl.io.operation
 
   alu.io.operation := operation
-  alu.io.inputx := Mux(instruction(6,0) === "b0010111".U, pcaddr, readdata1)
+  when (alusrc1 === 0.U) {
+    alu.io.inputx := readdata1
+  } .elsewhen (alusrc1 === 1.U) {
+    alu.io.inputx := pcaddr
+  } .otherwise {alu.io.inputx := 0.U}
   alu.io.inputy := Mux(immediate, immgen, readdata2)
   aluresult := alu.io.result
 
   io.dmem.address := aluresult
   io.dmem.memread := memread
+  io.dmem.memwrite := memwrite
   readdata := io.dmem.readdata
 
   when(toreg === 0.U){
     registers.io.writedata := aluresult
   } .elsewhen(toreg === 1.U){
     registers.io.writedata := readdata
-  } .otherwise{registers.io.writedata := 0.U}
+  } .elsewhen(toreg === 2.U){
+    registers.io.writedata := pcPlusresult
+  } .otherwise {registers.io.writedata := 0.U}
 
 
 

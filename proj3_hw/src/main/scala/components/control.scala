@@ -50,7 +50,7 @@ class Control extends Module {
       //U-type-lui
       BitPat("b0110111".U) -> List(false.B, false.B, 0.U,   false.B, false.B,  true.B, true.B,     0.U,    0.U),
       //U-type-auipc
-      BitPat("b0010111".U) -> List(false.B, false.B, 0.U,   true.B, false.B,  true.B, true.B,     0.U,    0.U)
+      BitPat("b0010111".U) -> List(false.B, false.B, 0.U,   true.B, false.B,  true.B, true.B,     2.U,    0.U)
       ) // Array
 
     ) // ListLookup
