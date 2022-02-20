@@ -31,9 +31,11 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
   val instruction = io.imem.instruction
 
   io.imem.address := pc  
-  when (control.io.jump === 0.U){
-    pc := Mux(branchCtrl.io.taken, branchAdd.io.result, pcPlusFour.io.result)
-  } .otherwise {pc := Mux(branchCtrl.io.taken, branchAdd.io.result, alu.io.result)}
+  when (branchCtrl.io.taken === true.B) {
+    pc := branchAdd.io.result
+  } .elsewhen (control.io.jump(1) === 1.U) {
+    pc := alu.io.result
+  } .otherwise {pc := pcPlusFour.io.result}
 
   pcPlusFour.io.inputx := pc
   pcPlusFour.io.inputy := 4.U
@@ -51,7 +53,7 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
   branchCtrl.io.branch := control.io.branch
 
   branchAdd.io.inputx := pc
-  branchAdd.io.inputy := Mux(branchCtrl.io.taken, immGen.io.sextImm, 4.U)
+  branchAdd.io.inputy := immGen.io.sextImm
 
   immGen.io.instruction := instruction
 
@@ -63,6 +65,8 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
   alu.io.operation := aluControl.io.operation
   when (control.io.alusrc1 === 0.U) {
     alu.io.inputx := registers.io.readdata1
+  } .elsewhen (control.io.alusrc1 === 1.U) {
+    alu.io.inputx := 0.U
   } .elsewhen (control.io.alusrc1 === 2.U) {
     alu.io.inputx := pc
   } .otherwise {alu.io.inputx := 0.U}
@@ -73,6 +77,7 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
   io.dmem.memwrite := control.io.memwrite
   io.dmem.writedata := registers.io.readdata2
   io.dmem.maskmode := instruction(13,12)
+  io.dmem.sext := ~instruction(14)
 
   when(control.io.toreg === 0.U){
     registers.io.writedata := alu.io.result
