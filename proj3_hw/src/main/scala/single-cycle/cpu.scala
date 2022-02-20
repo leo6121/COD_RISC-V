@@ -34,7 +34,9 @@ class SingleCycleCPU(implicit val conf: CPUConfig) extends Module {
   when (branchCtrl.io.taken === true.B) {
     pc := branchAdd.io.result
   } .elsewhen (control.io.jump(1) === 1.U) {
-    pc := alu.io.result
+    when (control.io.jump(0) === 1.U) {
+      pc := Cat(alu.io.result(31,1),0.U)
+    } .otherwise {pc := alu.io.result}    
   } .otherwise {pc := pcPlusFour.io.result}
 
   pcPlusFour.io.inputx := pc
