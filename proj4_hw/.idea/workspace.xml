@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="208b91b8-f42e-4a8a-963b-3b24549c4e3a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/labs/Lab3Test.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/labs/Lab3Test.scala" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1XYo71shAmhUtZZ5TS0prYpxAkT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="dinocpu" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="root [file:/home/jwhur/Class/dinocpu/]" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="dinocpu-build" />
+                <option name="path" value="$PROJECT_DIR$/project" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="4749865552713" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="1067972798" />
+        <entry key="$PROJECT_DIR$/project/build.properties" value="3280644262" />
+        <entry key="$PROJECT_DIR$/project/plugins.sbt" value="3635407264" />
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../riscv-sodor" value="PREVIEW" />
+        <entry key="$USER_HOME$/Research/RTL_Fuzzing/target/RISCV/firrtl" value="PREVIEW" />
+        <entry key="$USER_HOME$/opensources/ChiselProjects/MyChiselProject" value="PREVIEW" />
+        <entry key="$USER_HOME$/opensources/chipyard" value="PREVIEW" />
+        <entry key="$USER_HOME$/opensources/rfuzz/harness" value="PREVIEW" />
+        <entry key="$USER_HOME$/opensources/rocket-chip" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="208b91b8-f42e-4a8a-963b-3b24549c4e3a" name="Default Changelist" comment="" />
+      <created>1581232217226</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581232217226</updated>
+      <workItem from="1581232223492" duration="1765000" />
+      <workItem from="1581235775192" duration="709000" />
+      <workItem from="1581299001983" duration="49000" />
+      <workItem from="1583288843736" duration="255000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1096" y="485" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581299047075">
+      <screen x="67" y="27" width="2493" height="1413" />
+    </state>
+    <state x="1096" y="485" width="424" height="484" key="FileChooserDialogImpl/67.27.2493.1413@67.27.2493.1413" timestamp="1581299047075" />
+    <state x="985" y="349" width="672" height="685" key="search.everywhere.popup" timestamp="1583288866621">
+      <screen x="67" y="27" width="2493" height="1413" />
+    </state>
+    <state x="943" y="319" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1581236088324" />
+    <state x="985" y="349" width="672" height="685" key="search.everywhere.popup/67.27.2493.1413@67.27.2493.1413" timestamp="1583288866621" />
+  </component>
+</project>

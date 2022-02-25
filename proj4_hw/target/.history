@@ -1,0 +1,44 @@
+Lab3 / testOnly dinocpu.RTypeTesterLab3
+Lab3 / testOnly dinocpu.ITypeTesterLab3
+Lab3 / testOnly dinocpu.UTypeTesterLab3
+Lab3 / testOnly dinocpu.MemoryTesterLab3
+Lab3 / testOnly dinocpu.ITypeTesterLab3
+Lab3 / testOnly dinocpu.UTypeTesterLab3
+Lab3 / testOnly dinocpu.MemoryTesterLab3
+Lab3 / testOnly dinocpu.UTypeTesterLab3
+Lab3 / testOnly dinocpu.RTypeTesterLab3
+Lab3 / testOnly dinocpu.ITypeTesterLab3
+Lab3 / testOnly dinocpu.UTypeTesterLab3
+Lab3 / testOnly dinocpu.MemoryTesterLab3
+Lab3 / testOnly dinocpu.ITypeMultiCycleTesterLab3
+Lab3 / testOnly dinocpu.RTypeMultiCycleTesterLab3
+testOnly dinocpu.BranchTesterLab3
+testOnly dinocpu.UTypeTesterLab3
+testOnly dinocpu.BranchTesterLab3
+testOnly dinocpu.UTypeTesterLab3
+Lab3 / testOnly dinocpu.MemoryTesterLab3
+Lab3 / testOnly dinocpu.ApplicationsTesterLab3
+testOnly dinocpu.UTypeTesterLab3
+Lab3 / testOnly dinocpu.ApplicationsTesterLab3
+testOnly dinocpu.UTypeTesterLab3
+Lab3 / testOnly dinocpu.ApplicationsTesterLab3
+Lab3 / runMain dinocpu.singlestep fibonacci pipelined
+Lab3 / runMain dinocpu.singlestep divider pipelined
+Lab3 / testOnly dinocpu.ApplicationsTesterLab3
+Lab3 / runMain dinocpu.singlestep divider pipelined
+Lab3 / testOnly dinocpu.ApplicationsTesterLab3
+Lab3 / runMain dinocpu.singlestep divider pipelined
+Lab3 / testOnly dinocpu.ApplicationsTesterLab3
+Lab3 / runMain dinocpu.singlestep divider pipelined
+Lab3 / testOnly dinocpu.ApplicationsTesterLab3
+Lab3 / runMain dinocpu.singlestep divider pipelined
+Lab3 / testOnly dinocpu.ApplicationsTesterLab3
+Lab3 / runMain dinocpu.singlestep naturalsum pipelined
+Lab3 / testOnly dinocpu.ApplicationsTesterLab3
+Lab3 / runMain dinocpu.singlestep naturalsum piplined
+Lab3 / runMain dinocpu.singlestep naturalsum pipelined
+Lab3 / testOnly dinocpu.NaturalsumTesterLab3
+Lab3 / testOnly dinocpu.ApplicationsTesterLab3
+Lab3 / runMain dinocpu.singlestep naturalsum pipelined
+Lab3 / testOnly dinocpu.ApplicationsTesterLab3
+Lab3 / runMain dinocpu.singlestep naturalsum pipelined
