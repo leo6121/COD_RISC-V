@@ -1,7 +1,6 @@
 [0m[[0m[0minfo[0m] [0m[0m[32mApplicationsTesterLab3:[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mPipelined CPU[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should run application fibonacci[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m- should run application naturalsum *** FAILED ***[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  false was not true (Lab3Test.scala:108)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should run application naturalsum[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should run application multiplier[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should run application divider[0m[0m

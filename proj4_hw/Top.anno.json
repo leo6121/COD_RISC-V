@@ -20,7 +20,7 @@
   {
     "class":"firrtl.annotations.LoadMemoryAnnotation",
     "target":"Top.DualPortedMemory.memory",
-    "fileName":"./naturalsum.hex",
+    "fileName":"./rotR.hex",
     "hexOrBinary":"h",
     "originalMemoryNameOpt":"memory"
   },

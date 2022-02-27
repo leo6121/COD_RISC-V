@@ -1,12 +1,11 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(dinocpu.ApplicationsTesterLab3, org.scalatest.tools.Framework$$anon$1@1bb9f3b6, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(dinocpu.RTypeMultiCycleTesterLab3, org.scalatest.tools.Framework$$anon$1@5e74d031, false, [SuiteSelector])[0m
 [0m[[0m[0mdebug[0m] [0m[0mSummary for ScalaCheck not available.[0m
 [0m[[0m[0minfo[0m] [0m[0mScalaTest[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 9 seconds, 365 milliseconds.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 4[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 8 seconds, 165 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 8[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 3, failed 1, canceled 0, ignored 0, pending 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m*** 1 TEST FAILED ***[0m[0m
-[0m[[0m[31merror[0m] [0m[0mFailed: Total 4, Failed 1, Errors 0, Passed 3[0m
-[0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
-[0m[[0m[31merror[0m] [0m[0m	dinocpu.ApplicationsTesterLab3[0m
-[0m[[0m[31merror[0m] [0m[0m(Lab3 / [31mtestOnly[0m) sbt.TestsFailedException: Tests unsuccessful[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 8, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0mPassed: Total 8, Failed 0, Errors 0, Passed 8[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	dinocpu.RTypeMultiCycleTesterLab3[0m

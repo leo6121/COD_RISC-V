@@ -32,9 +32,7 @@ class HazardUnit extends Module {
     val exmem_taken  = Input(Bool())
 
     val pcwrite      = Output(UInt(2.W))
-    val ifid_bubble  = Output(Bool())
-    val idex_bubble  = Output(Bool())
-    val exmem_bubble = Output(Bool())
+    val ifid_stall  = Output(Bool())
     val ifid_flush   = Output(Bool())
     val idex_flush   = Output(Bool())
     val exmem_flush  = Output(Bool())
@@ -48,25 +46,19 @@ class HazardUnit extends Module {
   // branch flush
   when (io.exmem_taken) {// Branch
     io.pcwrite      := 1.U
-    io.ifid_bubble  := false.B
-    io.idex_bubble  := false.B
-    io.exmem_bubble := false.B
+    io.ifid_stall  := false.B
     io.ifid_flush   := true.B
     io.idex_flush   := true.B
     io.exmem_flush  := true.B
-  } .elsewhen (io.idex_memread & {io.rs1 === io.idex_rd | io.rs2 === io.idex_rd}) {// Load
+  } .elsewhen (io.idex_memread && (io.rs1 === io.idex_rd || io.rs2 === io.idex_rd)) {// Load
     io.pcwrite      := 2.U
-    io.ifid_bubble  := true.B
-    io.idex_bubble  := false.B
-    io.exmem_bubble := false.B
+    io.ifid_stall  := true.B
     io.ifid_flush   := false.B
     io.idex_flush   := true.B
     io.exmem_flush  := false.B
   } .otherwise {
     io.pcwrite      := 0.U
-    io.ifid_bubble  := false.B
-    io.idex_bubble  := false.B
-    io.exmem_bubble := false.B
+    io.ifid_stall  := false.B
     io.ifid_flush   := false.B
     io.idex_flush   := false.B
     io.exmem_flush  := false.B

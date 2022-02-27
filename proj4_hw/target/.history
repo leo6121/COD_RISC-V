@@ -42,3 +42,15 @@ Lab3 / testOnly dinocpu.ApplicationsTesterLab3
 Lab3 / runMain dinocpu.singlestep naturalsum pipelined
 Lab3 / testOnly dinocpu.ApplicationsTesterLab3
 Lab3 / runMain dinocpu.singlestep naturalsum pipelined
+Lab3 / testOnly dinocpu.ApplicationsTesterLab3
+Lab3 / runMain dinocpu.singlestep naturalsum pipelined
+Lab3 / testOnly dinocpu.ApplicationsTesterLab3
+Lab3 / runMain dinocpu.singlestep naturalsum pipelined
+Lab3 / testOnly dinocpu.ApplicationsTesterLab3
+testOnly dinocpu.UTypeTesterLab3
+Lab3 / testOnly dinocpu.MemoryMultiCycleTesterLab3
+Lab3 / testOnly dinocpu.JumpTesterLab3
+Lab3 / testOnly dinocpu.BranchTesterLab3
+Lab3 / testOnly dinocpu.RTypeMultiCycleTesterLab3
+q
+exit
